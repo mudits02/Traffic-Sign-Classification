@@ -3,6 +3,7 @@ import glob
 import sklearn as sk
 from sklearn.model_selection import train_test_split
 import shutil
+import tensorflow as tf
 
 def split_data (path_to_data , path_to_save_train , path_to_save_valid , split_size = 0.1):
 
@@ -16,7 +17,6 @@ def split_data (path_to_data , path_to_save_train , path_to_save_valid , split_s
         x_train , x_val = train_test_split(images_path , test_size = split_size)
 
         for x in x_train:
-            
             path_to_folder = os.path.join(path_to_save_train , folder)
 
             if not os.path.isdir(path_to_folder):
