@@ -5,6 +5,7 @@ import os
 import glob
 import shutil
 from sklearn.model_selection import train_test_split
+import csv
 
 def image_display(examples, labels):
 
@@ -54,4 +55,10 @@ def split_data(path_to_data, path_to_save_train, path_to_save_valid, split_size=
 
 
 def test_set(path_to_test , path_to_csv):
-    
+
+    testset = {}
+
+    try:
+        with open(path_to_csv , 'r') as csvfiles:
+            
+            
